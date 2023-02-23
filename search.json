@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "about/LaurenZichittella.html",
+    "href": "about/LaurenZichittella.html",
+    "title": "Lauren ZIchittella",
+    "section": "",
+    "text": "BS Biochemistry, University at Albany\nMS Epidemiology, UMass Amherst\n\n\n\nLead SAS Programmer/Analyst"
+  },
+  {
+    "objectID": "about/LaurenZichittella.html#r-experience",
+    "href": "about/LaurenZichittella.html#r-experience",
+    "title": "Lauren ZIchittella",
+    "section": "R experience",
+    "text": "R experience\nBeginner course work\nMinimal work experience"
+  },
+  {
+    "objectID": "about/LaurenZichittella.html#research-interests",
+    "href": "about/LaurenZichittella.html#research-interests",
+    "title": "Lauren ZIchittella",
+    "section": "Research interests",
+    "text": "Research interests\nPublic Health\nData!"
+  },
+  {
+    "objectID": "about/LaurenZichittella.html#hometown",
+    "href": "about/LaurenZichittella.html#hometown",
+    "title": "Lauren ZIchittella",
+    "section": "Hometown",
+    "text": "Hometown\nBuffalo, NY"
+  },
+  {
+    "objectID": "about/LaurenZichittella.html#hobbies",
+    "href": "about/LaurenZichittella.html#hobbies",
+    "title": "Lauren ZIchittella",
+    "section": "Hobbies",
+    "text": "Hobbies\nReading\nCooking\nMusic\nHanging with my family"
+  },
+  {
+    "objectID": "about/LaurenZichittella.html#fun-fact",
+    "href": "about/LaurenZichittella.html#fun-fact",
+    "title": "Lauren ZIchittella",
+    "section": "Fun fact",
+    "text": "Fun fact\nI love Dolly Parton."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Contributors",
+    "section": "",
+    "text": "Find out more about our DACSS students who contributed to the blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLauren ZIchittella\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DACSS 601: Data Science Fundamentals Spring-2023",
+    "section": "",
+    "text": "The blog posts here are contributed by students enrolled in DACSS 601, Fundamentals of Data Science. The course provides students with an introduction to R and the tidyverse, scientific publishing, and collaboration through GitHub, building a foundation for future coursework. Students also are introduced to general data management and data wrangling skills, with an emphasis on best practice workflows and tidy data management.\n\n\n\n\n\n\n\n\n\n\nChallenge 1 Instructions\n\n\n\n\n\n\n\nchallenge_1\n\n\nlaurenzichittella\n\n\nwild_bird_data\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nLauren Zichittella\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/laurenzichittella_challenge1.html",
+    "href": "posts/laurenzichittella_challenge1.html",
+    "title": "Challenge 1 Instructions",
+    "section": "",
+    "text": "This dataset was utilized by Nee et al to produce a figure to show the relationship between wild bird weight and population size.\nIt consists of two numeric variables, wet body weight in grams and population size and 146 distinct observations.\n\n\n\n\nUtilize read_xls\n\nSkip import of first two rows\n\nrow 1 includes header\n\nrow 2 provides variable names I do not want to use\n\n\nAssign new variable names:\n\nWet body weight [g] = wet_weight_g\n\nPopulation size = pop_size\n\n\nOutput variable class\n\nSort by ascending values of wet_weight_g\n\n\n\nCode\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)\n\nlibrary(readxl)\n\nwild_bird_data2 <- read_xlsx( \"_data/wild_bird_data.xlsx\", skip = 2, col_names = c(\"wet_weight_g\", \"pop_size\"))\n\nsapply(wild_bird_data2, class)\n\n\nwet_weight_g     pop_size \n   \"numeric\"    \"numeric\" \n\n\nCode\narrange(wild_bird_data2,wet_weight_g)\n\n\n# A tibble: 146 × 2\n   wet_weight_g pop_size\n          <dbl>    <dbl>\n 1         5.46  532194.\n 2         7.42  389806.\n 3         7.76 3165107.\n 4         8.04  192361.\n 5         8.64 2592997.\n 6         8.70  250452.\n 7         8.89   16997.\n 8         9.12  604766.\n 9         9.52     595.\n10        10.1    74386.\n# … with 136 more rows"
+  },
+  {
+    "objectID": "posts/laurenzichittella_challenge1.html#provide-baseline-characterization-of-data",
+    "href": "posts/laurenzichittella_challenge1.html#provide-baseline-characterization-of-data",
+    "title": "Challenge 1 Instructions",
+    "section": "Provide baseline characterization of data",
+    "text": "Provide baseline characterization of data\n\nSummary/Results\nBoth Variables are populated for all observations and represent a wide range of values. Distributions of weight and population size are positively skewed bu outliers.\n\n\nTechnical notes\nProvide the following information:\n- Print of first 23 observations\n- Print of last 23 observations\n- Filter on presence of missing values for wet_weight_g or pop_size\n- Summarize numeric variables\n\n\nCode\nslice(wild_bird_data2, 1:23)\n\n\n# A tibble: 23 × 2\n   wet_weight_g pop_size\n          <dbl>    <dbl>\n 1         5.46  532194.\n 2         7.76 3165107.\n 3         8.64 2592997.\n 4        10.7  3524193.\n 5         7.42  389806.\n 6         9.12  604766.\n 7         8.04  192361.\n 8         8.70  250452.\n 9         8.89   16997.\n10         9.52     595.\n# … with 13 more rows\n\n\nCode\nslice(wild_bird_data2, 124:146)\n\n\n# A tibble: 23 × 2\n   wet_weight_g pop_size\n          <dbl>    <dbl>\n 1         821.     253.\n 2         645.     386.\n 3         757.     612.\n 4         604.    1162.\n 5        1008.     908.\n 6         528.   40510.\n 7         766.   57460.\n 8         923.   34547.\n 9         887.   13391.\n10         955.   12526.\n# … with 13 more rows\n\n\nCode\nfilter(wild_bird_data2, is.na(wet_weight_g) | is.na(pop_size))\n\n\n# A tibble: 0 × 2\n# … with 2 variables: wet_weight_g <dbl>, pop_size <dbl>\n\n\nCode\nresult='asis'\nlibrary(summarytools)\n\ndfSummary(wild_bird_data2, varnumbers = FALSE, valid.col = FALSE)\n\n\nData Frame Summary  \nwild_bird_data2  \nDimensions: 146 x 2  \nDuplicates: 0  \n\n--------------------------------------------------------------------------------------\nVariable       Stats / Values                  Freqs (% of Valid)    Graph   Missing  \n-------------- ------------------------------- --------------------- ------- ---------\nwet_weight_g   Mean (sd) : 363.7 (983.5)       146 distinct values   :       0        \n[numeric]      min < med < max:                                      :       (0.0%)   \n               5.5 < 69.2 < 9639.8                                   :                \n               IQR (CV) : 291.2 (2.7)                                :                \n                                                                     : .              \n\npop_size       Mean (sd) : 382874 (951938.7)   146 distinct values   :       0        \n[numeric]      min < med < max:                                      :       (0.0%)   \n               4.9 < 24353.2 < 5093378                               :                \n               IQR (CV) : 196693.8 (2.5)                             :                \n                                                                     : .              \n--------------------------------------------------------------------------------------\n\n\nCode\nhist(  wild_bird_data2$wet_weight_g\n     , main=\"Distribution of Weight Captured in Wild Bird Datset\"\n     , xlab=\"Wet Weight in Grams\"\n     , col = \"red\")\n\n\n\n\n\nCode\nhist(  wild_bird_data2$pop_size\n     , main=\"Distribution of Population Size Captured in Wild Bird Datset\"\n     , xlab = \"Population Size\"\n     , col = \"red\")"
+  },
+  {
+    "objectID": "posts/laurenzichittella_challenge1.html#evaluate-relationship-between-weight-and-population-size-graphically",
+    "href": "posts/laurenzichittella_challenge1.html#evaluate-relationship-between-weight-and-population-size-graphically",
+    "title": "Challenge 1 Instructions",
+    "section": "Evaluate relationship between weight and population size graphically",
+    "text": "Evaluate relationship between weight and population size graphically\n\nSummary/Results\nPlotting weight by population size does not clearly point to any relationship between these variables.\n\n\nTechnical notes\nPlot results on log10 scale\n\n\nCode\n# Load packages\nrequire(MASS) # to access Animals data sets\nrequire(scales) # to access break formatting functions\nlibrary(ggplot2)\nstart_plot <- ggplot(wild_bird_data2, aes(x=pop_size, y=wet_weight_g)) + geom_point()\n\nstart_plot2 <- start_plot +\n     scale_x_log10(breaks = trans_breaks(\"log10\", function(x) 10^x),\n              labels = trans_format(\"log10\", math_format(10^.x))) +\n     scale_y_log10(breaks = trans_breaks(\"log10\", function(x) 10^x),\n              labels = trans_format(\"log10\", math_format(10^.x))) +\n     theme_bw() \n\nstart_plot2 +annotation_logticks() +\n  ggtitle(\"Relationship between Weight and Population Size in Wild Birds\") +\n  xlab(\"Population Size\")+\n  ylab(\"Wet Weight (g)\")"
+  }
+]
